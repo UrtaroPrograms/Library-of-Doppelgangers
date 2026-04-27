@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://mvd8byib56uy"]
+
+[ext_resource type="PackedScene" uid="uid://ccway7jxq37f8" path="res://Personaje_Jugable/personaje_jugable.tscn" id="1_t8kak"]
+
+[node name="Escena_testeo" type="Node2D" unique_id=83255710]
+
+[node name="PersonajeJugable" parent="." unique_id=1271527831 instance=ExtResource("1_t8kak")]
+position = Vector2(112, 304)
