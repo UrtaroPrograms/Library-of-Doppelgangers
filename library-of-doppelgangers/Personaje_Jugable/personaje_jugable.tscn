@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ccway7jxq37f8"]
+
+[ext_resource type="Script" uid="uid://dd3a8lwuqmrt2" path="res://Personaje_Jugable/personaje_jugable.gd" id="1_62dhi"]
+[ext_resource type="Texture2D" uid="uid://yoe6dvjh1j1y" path="res://icon.svg" id="1_gn4tk"]
+[ext_resource type="Script" uid="uid://q0ldb7m6sw3y" path="res://state_machine.gd" id="3_ccnnp"]
+[ext_resource type="Script" uid="uid://ctcpordp1c22h" path="res://Personaje_Jugable/States_PJ/walking.gd" id="4_xdxwd"]
+[ext_resource type="Script" uid="uid://dxifcw35qvf1y" path="res://Personaje_Jugable/States_PJ/idle.gd" id="5_pxtux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62dhi"]
+size = Vector2(128, 129)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_62dhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gn4tk")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gn4tk")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_gn4tk")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 3.0
+}]
+
+[node name="PersonajeJugable" type="CharacterBody2D" unique_id=1271527831]
+scale = Vector2(0.7, 0.7)
+motion_mode = 1
+script = ExtResource("1_62dhi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=817588100]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_62dhi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=712047399]
+sprite_frames = SubResource("SpriteFrames_62dhi")
+animation = &"Walk"
+
+[node name="State Machine" type="Node" parent="." unique_id=1560162360 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_ccnnp")
+initial_state = NodePath("Idle")
+
+[node name="Walking" type="Node" parent="State Machine" unique_id=2075872300 node_paths=PackedStringArray("character")]
+script = ExtResource("4_xdxwd")
+character = NodePath("../..")
+
+[node name="Idle" type="Node" parent="State Machine" unique_id=1177731231 node_paths=PackedStringArray("character")]
+script = ExtResource("5_pxtux")
+character = NodePath("../..")
+
+[connection signal="Transitioned" from="State Machine/Walking" to="State Machine" method="_on_child_transition"]
+[connection signal="Transitioned" from="State Machine/Idle" to="State Machine" method="_on_child_transition"]
