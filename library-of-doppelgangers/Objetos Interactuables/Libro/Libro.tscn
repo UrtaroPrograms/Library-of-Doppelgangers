@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://hh4n153k3tte"]
+
+[ext_resource type="Script" uid="uid://btlc1tg4l46lu" path="res://Objetos Interactuables/Libro/libro.gd" id="1_dy87g"]
+[ext_resource type="Texture2D" uid="uid://dso7aeqj6v7w4" path="res://Objetos Interactuables/Libro/Libro Placeholder.png" id="2_mpo4n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eh5fl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byqcs"]
+size = Vector2(60, 57)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1650235712]
+physics_material_override = SubResource("PhysicsMaterial_eh5fl")
+script = ExtResource("1_dy87g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=273794979]
+position = Vector2(-1.9073486e-06, 1.9073486e-06)
+scale = Vector2(0.16125003, 0.16125003)
+texture = ExtResource("2_mpo4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=610693552]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_byqcs")

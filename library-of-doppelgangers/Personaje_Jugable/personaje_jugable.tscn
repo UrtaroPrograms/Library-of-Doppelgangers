@@ -59,5 +59,9 @@ character = NodePath("../..")
 script = ExtResource("5_pxtux")
 character = NodePath("../..")
 
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1938034871]
+position = Vector2(0, 3.8146973e-06)
+target_position = Vector2(0, 131.42856)
+
 [connection signal="Transitioned" from="State Machine/Walking" to="State Machine" method="_on_child_transition"]
 [connection signal="Transitioned" from="State Machine/Idle" to="State Machine" method="_on_child_transition"]
