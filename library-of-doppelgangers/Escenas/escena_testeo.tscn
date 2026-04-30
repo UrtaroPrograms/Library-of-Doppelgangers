@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://mvd8byib56uy"]
 
+[ext_resource type="Script" uid="uid://cvuugpsskiv4t" path="res://Escenas/escena_testeo.gd" id="1_im4fa"]
 [ext_resource type="PackedScene" uid="uid://ccway7jxq37f8" path="res://Personaje_Jugable/personaje_jugable.tscn" id="1_k8ntl"]
 [ext_resource type="PackedScene" uid="uid://hh4n153k3tte" path="res://Objetos Interactuables/Libro/Libro.tscn" id="2_5n0i8"]
 [ext_resource type="PackedScene" uid="uid://c3rpxlgf30ooo" path="res://Personaje_Jugable/Inventario/inventario.tscn" id="3_im4fa"]
+[ext_resource type="PackedScene" uid="uid://cnf61quystbo2" path="res://Objetos Interactuables/Escritorio/escritorio.tscn" id="4_5n0i8"]
 
 [node name="Escena_testeo" type="Node2D" unique_id=83255710]
+script = ExtResource("1_im4fa")
 
 [node name="PersonajeJugable" parent="." unique_id=1271527831 instance=ExtResource("1_k8ntl")]
 position = Vector2(405.99997, 230)
@@ -38,3 +41,6 @@ offset_left = 29.0
 offset_top = 559.0
 offset_right = 69.0
 offset_bottom = 599.0
+
+[node name="Escritorio" parent="." unique_id=1145544049 instance=ExtResource("4_5n0i8")]
+position = Vector2(926, 288)

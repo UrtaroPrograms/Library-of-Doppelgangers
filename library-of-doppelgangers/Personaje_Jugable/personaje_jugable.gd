@@ -5,10 +5,7 @@ const SPEED = 200.0
 
 
 func _ready():
-	var Libros = get_tree().get_nodes_in_group("Libros")	#Creamos un array llamado "Libros", el cual contiene todos los miembros del grupo Libros en la escena
-	for iteration in Libros:		#Para cada libro, conectamos su señal "Recogido" con el método "_recogerLibro"
-		iteration.connect("Recogido",_recogerLibro)
-	var Inventario = get_tree()
+	pass
 	
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -47,8 +44,6 @@ func _flip_vertical_appearance(flip: bool):
 func _turnRaycast(angle: int):
 	$RayCast2D.rotation_degrees = angle
 
-func _recogerLibro(libro: Libro):	#TODO:El método _recogerlibro, por ahora simplemente printea los datos del libro. Sin embargo, en un futuro los pasará al inventario, cuando lo tenga hecho.
-	pass
 
 	#var horizontalDirection := Input.get_axis("move_left", "move_right")
 	#if horizontalDirection:

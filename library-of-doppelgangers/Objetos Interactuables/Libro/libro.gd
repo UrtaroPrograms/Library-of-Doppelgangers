@@ -20,14 +20,12 @@ func _process(delta: float) -> void:
 
 func interact():	#La función interact del libro lo hace emitir su señal de recolección y luego borrarse.
 	Recogido.emit(self)
-	#TODO: En realidad, primero debería chequear con el inventario si hay un espacio disponible, y solo si lo hay entonces debe eliminarse. Esto puede hacerse con una señal que se envíe al inventario, que luego responda con otra señal a un método para eliminar el libro de verdad.
-	#Recogido.emit(nombreDelLibro,longitud,tematica)
-	#queue_free()
+	
 	
 func _describe(): #El método Describe hace que el libro retorne su descripción en forma de un String. Lo llama el inventario para dar la descripción del libro.
 	return ("Nombre del Libro : \n" + nombreDelLibro + "\n\nLongitud: " + longitud + "\n\nTemática: " + tematica)
 
-func _giveAppearance():
+func _giveAppearance():	#Retornamos el sprite2D del libro.
 	return $Sprite2D.texture
 
 func _eliminar():	#Este método elimina el libro.

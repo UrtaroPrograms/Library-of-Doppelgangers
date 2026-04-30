@@ -12,8 +12,13 @@ func _ready() -> void:
 	for iteration in Libros:		#Para cada libro, conectamos su señal "Recogido" con el método "_recogerLibro"
 		iteration.connect("Recogido",_acquireItem)
 	
-	$Slot1._emptySlot()
+	$Slot1._emptySlot()		#Vaciamos los slots para iniciar(solo para asegurarnos, ya están vacíos. Les asignamos su numero y nos conectamos a su señal.
+	$Slot1.slotNumber = 1
+	$Slot1.connect("ObjetoSoltado", _dropItem)
+	
 	$Slot2._emptySlot()
+	$Slot2.slotNumber = 2
+	$Slot2.connect("ObjetoSoltado", _dropItem)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -35,6 +40,8 @@ func _acquireItem(item: Object):	#El método acquireItem chequea si hay un espac
 		print("El inventario está lleno!")
 
 func _dropItem(slot: int):	#El método _dropItem recibe un slot (determinado por un int) y lo vacía.
+	#var escenaActual = get_tree().get_current_scene() Nota: El chequeo de si la escena actual es la del escritorio actualmente no funciona.
+	#if(escenaActual.get_name() == "escritorio_escena"):
 	if(slot==1):
 		itemSlot1 = null
 		slot1Ocupado = false

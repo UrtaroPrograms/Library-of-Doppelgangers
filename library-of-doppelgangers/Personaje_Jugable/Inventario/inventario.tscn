@@ -38,6 +38,10 @@ I really love
 Being a HUD
 element!"
 
+[node name="Button" type="Button" parent="Slot1" unique_id=1430687029]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
 [node name="Slot2" type="PanelContainer" parent="." unique_id=783628041]
 layout_direction = 2
 layout_mode = 0
@@ -63,3 +67,10 @@ text = "Hooo boy
 I really love 
 Being a HUD
 element!"
+
+[node name="Button" type="Button" parent="Slot2" unique_id=1182704875]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="Slot1/Button" to="Slot1" method="_on_button_pressed"]
+[connection signal="pressed" from="Slot2/Button" to="Slot2" method="_on_button_pressed"]
