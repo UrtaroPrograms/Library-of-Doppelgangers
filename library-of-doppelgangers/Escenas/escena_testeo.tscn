@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://mvd8byib56uy"]
+
+[ext_resource type="PackedScene" uid="uid://ccway7jxq37f8" path="res://Personaje_Jugable/personaje_jugable.tscn" id="1_k8ntl"]
+[ext_resource type="PackedScene" uid="uid://hh4n153k3tte" path="res://Objetos Interactuables/Libro/Libro.tscn" id="2_5n0i8"]
+[ext_resource type="PackedScene" uid="uid://c3rpxlgf30ooo" path="res://Personaje_Jugable/Inventario/inventario.tscn" id="3_im4fa"]
+
+[node name="Escena_testeo" type="Node2D" unique_id=83255710]
+
+[node name="PersonajeJugable" parent="." unique_id=1271527831 instance=ExtResource("1_k8ntl")]
+position = Vector2(405.99997, 230)
+
+[node name="Libro1" parent="." unique_id=53661918 groups=["Libros"] instance=ExtResource("2_5n0i8")]
+position = Vector2(201, 46)
+nombreDelLibro = "Las Aventuras de Pepe"
+longitud = "Medio"
+tematica = "Aventura"
+
+[node name="Libro2" parent="." unique_id=1650235712 groups=["Libros"] instance=ExtResource("2_5n0i8")]
+position = Vector2(712, 238)
+nombreDelLibro = "La Historia del Universo enterita"
+longitud = "Largo"
+tematica = "No-Ficción"
+
+[node name="Libro3" parent="." unique_id=792320326 groups=["Libros"] instance=ExtResource("2_5n0i8")]
+position = Vector2(265, 468)
+nombreDelLibro = "La Librería de los Doppelgangers"
+longitud = "Corto"
+tematica = "Terror"
+
+[node name="Libro4" parent="." unique_id=771331239 groups=["Libros"] instance=ExtResource("2_5n0i8")]
+position = Vector2(88, 219)
+nombreDelLibro = "El Percebe Feo"
+longitud = "Corto"
+tematica = "Tragedia"
+
+[node name="Inventario" parent="." unique_id=52916187 instance=ExtResource("3_im4fa")]
+offset_left = 29.0
+offset_top = 559.0
+offset_right = 69.0
+offset_bottom = 599.0

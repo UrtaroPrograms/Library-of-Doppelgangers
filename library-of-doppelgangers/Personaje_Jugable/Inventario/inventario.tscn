@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c3rpxlgf30ooo"]
+
+[ext_resource type="Script" uid="uid://b46v5nn2ld6y1" path="res://Personaje_Jugable/Inventario/inventario.gd" id="1_bnejn"]
+[ext_resource type="Script" uid="uid://bwlsotjuf2885" path="res://Personaje_Jugable/Inventario/slot_inventario.gd" id="2_r7ghh"]
+[ext_resource type="Texture2D" uid="uid://dso7aeqj6v7w4" path="res://Objetos Interactuables/Libro/Libro Placeholder.png" id="3_bmj48"]
+
+[node name="Inventario" type="Control" unique_id=52916187]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 12.0
+offset_right = 52.0
+offset_bottom = 40.0
+script = ExtResource("1_bnejn")
+
+[node name="Slot1" type="PanelContainer" parent="." unique_id=1783860121]
+layout_direction = 2
+layout_mode = 0
+offset_left = -11.0
+offset_top = 7.0
+offset_right = 65.0
+offset_bottom = 82.0
+script = ExtResource("2_r7ghh")
+
+[node name="TextureRect" type="TextureRect" parent="Slot1" unique_id=1406306829]
+layout_mode = 2
+texture = ExtResource("3_bmj48")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Slot1/TextureRect" unique_id=1821721244]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -132.0
+offset_right = 156.0
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 8
+text = "Hooo boy
+I really love 
+Being a HUD
+element!"
+
+[node name="Slot2" type="PanelContainer" parent="." unique_id=783628041]
+layout_direction = 2
+layout_mode = 0
+offset_left = 144.0
+offset_top = 8.0
+offset_right = 219.0
+offset_bottom = 83.0
+script = ExtResource("2_r7ghh")
+
+[node name="TextureRect" type="TextureRect" parent="Slot2" unique_id=1087307077]
+layout_mode = 2
+texture = ExtResource("3_bmj48")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Slot2/TextureRect" unique_id=1243733380]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -132.0
+offset_right = 156.0
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 8
+text = "Hooo boy
+I really love 
+Being a HUD
+element!"
