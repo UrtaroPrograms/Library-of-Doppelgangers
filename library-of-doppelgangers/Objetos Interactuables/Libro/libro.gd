@@ -1,6 +1,7 @@
 extends Interactable
 class_name Libro
 
+#TODO: Al añadir otros objetos, podríamos crear una clase de objetos recogibles, que todos compartan los métodos para entregar su apariencia y descripción, ya que el inventario las usa.
 #Creamos una clase Libro, la cual hereda de Interactable (Una clase general para todos los objetos con los que el jugador interactua al moverse).
 
 signal Recogido #Envía una señal al ser recogido
@@ -18,6 +19,14 @@ func _process(delta: float) -> void:
 	pass
 
 func interact():	#La función interact del libro lo hace emitir su señal de recolección y luego borrarse.
-	#TODO: En realidad, primero debería chequear con el inventario si hay un espacio disponible, y solo si lo hay entonces debe eliminarse. Esto puede hacerse con una señal que se envíe al inventario, que luego responda con otra señal a un método para eliminar el libro de verdad.
-	Recogido.emit(nombreDelLibro,longitud,tematica)
+	Recogido.emit(self)
+	
+	
+func _describe(): #El método Describe hace que el libro retorne su descripción en forma de un String. Lo llama el inventario para dar la descripción del libro.
+	return ("Nombre del Libro : \n" + nombreDelLibro + "\n\nLongitud: " + longitud + "\n\nTemática: " + tematica)
+
+func _giveAppearance():	#Retornamos el sprite2D del libro.
+	return $Sprite2D.texture
+
+func _eliminar():	#Este método elimina el libro.
 	queue_free()

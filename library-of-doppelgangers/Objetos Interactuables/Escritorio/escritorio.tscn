@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cnf61quystbo2"]
+
+[ext_resource type="Script" uid="uid://dhfs71luk6tmq" path="res://Objetos Interactuables/Escritorio/escritorio.gd" id="1_qw4jt"]
+[ext_resource type="Texture2D" uid="uid://b7renlkqa5apf" path="res://Objetos Interactuables/Escritorio/Placeholder Escritorio.png" id="2_rm6jl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kj1b"]
+size = Vector2(186, 210)
+
+[node name="Escritorio" type="StaticBody2D" unique_id=1145544049]
+script = ExtResource("1_qw4jt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=218868020]
+position = Vector2(68, 90)
+scale = Vector2(4.03125, 4.03125)
+texture = ExtResource("2_rm6jl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1532686065]
+position = Vector2(96, 85)
+shape = SubResource("RectangleShape2D_2kj1b")
