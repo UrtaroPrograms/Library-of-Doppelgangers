@@ -1,6 +1,6 @@
 extends Node2D
 
-var escenaEscritorio = preload("res://Escenas/escritorio_escena.tscn").instantiate()	#Cargamos la escena del escritorio para luego poder cambiar.
+var escenaEscritorio = preload("res://Escenas/Escritorio/escritorio_escena.tscn").instantiate()	#Cargamos la escena del escritorio para luego poder cambiar.
 
 var inventario	#Tomamos al inventario como variable, de tal modo que podamos pasarselo a la escena escritorio
 
