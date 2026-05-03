@@ -36,7 +36,7 @@ nombreDelLibro = "El Percebe Feo"
 longitud = "Corto"
 tematica = "Tragedia"
 
-[node name="Inventario" parent="." unique_id=52916187 instance=ExtResource("3_im4fa")]
+[node name="Inventario" parent="." unique_id=52916187 groups=["Inventario"] instance=ExtResource("3_im4fa")]
 offset_left = 29.0
 offset_top = 559.0
 offset_right = 69.0

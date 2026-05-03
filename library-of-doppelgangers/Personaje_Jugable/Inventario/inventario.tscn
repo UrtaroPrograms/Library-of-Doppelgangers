@@ -45,10 +45,10 @@ layout_mode = 2
 [node name="Slot2" type="PanelContainer" parent="." unique_id=783628041]
 layout_direction = 2
 layout_mode = 0
-offset_left = 144.0
-offset_top = 8.0
-offset_right = 219.0
-offset_bottom = 83.0
+offset_left = 114.0
+offset_top = 7.0
+offset_right = 189.0
+offset_bottom = 82.0
 script = ExtResource("2_r7ghh")
 
 [node name="TextureRect" type="TextureRect" parent="Slot2" unique_id=1087307077]

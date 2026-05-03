@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://djavrxbdwap30"]
+
+[ext_resource type="Script" uid="uid://bec508nn8pgdq" path="res://Escenas/Escritorio/escritorio_escena.gd" id="1_7whd2"]
+[ext_resource type="PackedScene" uid="uid://k1xrvnbrhlxy" path="res://Escenas/Escritorio/slot_escritorio.tscn" id="2_3hren"]
+
+[node name="Escritorio Escena" type="Node2D" unique_id=490961609]
+script = ExtResource("1_7whd2")
+
+[node name="Button" type="Button" parent="." unique_id=1882353525]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 528.0
+offset_top = 504.0
+offset_right = 624.0
+offset_bottom = 535.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Levantarse"
+
+[node name="Slot Escritorio" parent="." unique_id=1908835188 instance=ExtResource("2_3hren")]
+offset_left = 32.0
+offset_top = 328.0
+offset_right = 32.0
+offset_bottom = 328.0
+
+[connection signal="pressed" from="Button" to="." method="_on_levantarse_pressed"]
