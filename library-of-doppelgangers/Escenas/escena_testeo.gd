@@ -1,6 +1,9 @@
 extends Node2D
 
 var escenaEscritorio = preload("res://Escenas/Escritorio/escritorio_escena.tscn").instantiate()	#Cargamos la escena del escritorio para luego poder cambiar.
+var escenaPuerta
+var escenaVictoria
+var escenaDerrota
 
 var inventario	#Tomamos al inventario como variable, de tal modo que podamos pasarselo a la escena escritorio
 
@@ -8,8 +11,10 @@ var inventario	#Tomamos al inventario como variable, de tal modo que podamos pas
 func _ready():
 	escenaEscritorio.connect("Levantarse", _volverAEscenaPrincipal)	#Nos connectamos a la señal "levantarse" de la escena escritorio, que nos hace volver
 	$Escritorio.connect("Sentarse", _pasarAEscenaEscritorio) #también nos conectamos a la escena "Sentarse" del escritorio objeto, el cual nos hace cambiar de escena.
+	escenaEscritorio.add_to_group("Escenas")	#Añadimos a la escena escritorio al grupo "Escenas" para poder llamar a sus métodos de Victoria y Derrota.
 	inventario = $Inventario
-
+	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -31,3 +36,19 @@ func _volverAEscenaPrincipal():	#Hacemos lo mismo, excepto que ahora quitamos la
 	arbolActual.get_root().remove_child(escenaActual)
 	arbolActual.set_current_scene(self)
 	self.add_child(inventario)
+
+
+func victoria():
+	$TemporizadorPuerta.stop()	#El temporizador de victoria sobreescribe al de la derrota, por ende lo detiene.
+	var arbolActual = get_tree()
+	var escenaActual = arbolActual.get_current_scene()
+	arbolActual.get_root().add_child(escenaVictoria)
+	arbolActual.get_root().remove_child(escenaActual)
+	arbolActual.set_current_scene(escenaVictoria)
+
+func derrota():
+	var arbolActual = get_tree()
+	var escenaActual = arbolActual.get_current_scene()
+	arbolActual.get_root().add_child(escenaDerrota)
+	arbolActual.get_root().remove_child(escenaActual)
+	arbolActual.set_current_scene(escenaDerrota)
