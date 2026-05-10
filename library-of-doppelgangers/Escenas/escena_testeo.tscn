@@ -5,42 +5,58 @@
 [ext_resource type="PackedScene" uid="uid://hh4n153k3tte" path="res://Objetos Interactuables/Libro/Libro.tscn" id="2_5n0i8"]
 [ext_resource type="PackedScene" uid="uid://c3rpxlgf30ooo" path="res://Personaje_Jugable/Inventario/inventario.tscn" id="3_im4fa"]
 [ext_resource type="PackedScene" uid="uid://cnf61quystbo2" path="res://Objetos Interactuables/Escritorio/escritorio.tscn" id="4_5n0i8"]
+[ext_resource type="PackedScene" uid="uid://ctgh2uby6krd3" path="res://barra_puerta.tscn" id="6_nuepx"]
+[ext_resource type="PackedScene" uid="uid://grn7gbjwfa" path="res://Objetos Interactuables/Cerrojo/cerrojo.tscn" id="7_67la5"]
+[ext_resource type="PackedScene" uid="uid://wbbavuv5lga3" path="res://Objetos Interactuables/Puerta/puerta.tscn" id="8_2b66a"]
 
-[node name="Escena_testeo" type="Node2D" unique_id=83255710]
+[node name="Escena_testeo" type="Node2D" unique_id=83255710 groups=["Escenas"]]
 script = ExtResource("1_im4fa")
 
 [node name="PersonajeJugable" parent="." unique_id=1271527831 instance=ExtResource("1_k8ntl")]
 position = Vector2(405.99997, 230)
 
-[node name="Libro1" parent="." unique_id=53661918 groups=["Libros"] instance=ExtResource("2_5n0i8")]
+[node name="Libro1" parent="." unique_id=53661918 groups=["Objetos"] instance=ExtResource("2_5n0i8")]
 position = Vector2(201, 46)
 nombreDelLibro = "Las Aventuras de Pepe"
 longitud = "Medio"
 tematica = "Aventura"
 
-[node name="Libro2" parent="." unique_id=1650235712 groups=["Libros"] instance=ExtResource("2_5n0i8")]
+[node name="Libro2" parent="." unique_id=1650235712 groups=["Objetos"] instance=ExtResource("2_5n0i8")]
 position = Vector2(712, 238)
 nombreDelLibro = "La Historia del Universo enterita"
 longitud = "Largo"
 tematica = "No-Ficción"
 
-[node name="Libro3" parent="." unique_id=792320326 groups=["Libros"] instance=ExtResource("2_5n0i8")]
+[node name="Libro3" parent="." unique_id=792320326 groups=["Objetos"] instance=ExtResource("2_5n0i8")]
 position = Vector2(265, 468)
 nombreDelLibro = "La Librería de los Doppelgangers"
 longitud = "Corto"
 tematica = "Terror"
 
-[node name="Libro4" parent="." unique_id=771331239 groups=["Libros"] instance=ExtResource("2_5n0i8")]
+[node name="Libro4" parent="." unique_id=771331239 groups=["Objetos"] instance=ExtResource("2_5n0i8")]
 position = Vector2(88, 219)
 nombreDelLibro = "El Percebe Feo"
 longitud = "Corto"
 tematica = "Tragedia"
 
-[node name="Inventario" parent="." unique_id=52916187 instance=ExtResource("3_im4fa")]
-offset_left = 29.0
-offset_top = 559.0
-offset_right = 69.0
-offset_bottom = 599.0
+[node name="Inventario" parent="." unique_id=52916187 groups=["Interfaz", "Inventario"] instance=ExtResource("3_im4fa")]
 
 [node name="Escritorio" parent="." unique_id=1145544049 instance=ExtResource("4_5n0i8")]
 position = Vector2(926, 288)
+
+[node name="TemporizadorVictoria" type="Timer" parent="." unique_id=2002237352 groups=["Interfaz"]]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="BarraPuerta" parent="." unique_id=254003400 groups=["Interfaz"] instance=ExtResource("6_nuepx")]
+offset_left = 734.0
+offset_top = 493.0
+offset_right = 734.0
+offset_bottom = 493.0
+
+[node name="Cerrojo" parent="." unique_id=1481363805 groups=["Objetos"] instance=ExtResource("7_67la5")]
+position = Vector2(593, 113)
+
+[node name="Puerta" parent="." unique_id=405713005 instance=ExtResource("8_2b66a")]
+position = Vector2(812, 22)

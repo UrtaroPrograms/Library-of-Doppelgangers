@@ -8,8 +8,8 @@ var itemSlot2: Object
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var Libros = get_tree().get_nodes_in_group("Libros")	#Creamos un array llamado "Libros", el cual contiene todos los miembros del grupo Libros en la escena
-	for iteration in Libros:		#Para cada libro, conectamos su señal "Recogido" con el método "_recogerLibro"
+	var Objetos = get_tree().get_nodes_in_group("Objetos")	#Creamos un array llamado "Objetos", el cual contiene todos los miembros del grupo Objetos en la escena, es decir los objetos recogibles.
+	for iteration in Objetos:		#Para cada objeto, conectamos su señal "Recogido" con el método "_recogerLibro"
 		iteration.connect("Recogido",_acquireItem)
 	
 	$Slot1._emptySlot()		#Vaciamos los slots para iniciar(solo para asegurarnos, ya están vacíos. Les asignamos su numero y nos conectamos a su señal.
@@ -51,3 +51,34 @@ func _dropItem(slot: int):	#El método _dropItem recibe un slot (determinado por
 		slot2Ocupado = false
 		$Slot2._emptySlot()
 	
+func _depositItem(depositSlot):	#Tomamos como argumento un slot ("destino") donde dejar nuestro objeto
+	if slot1Ocupado:	#Primero chequeamos si el slot 1 tiene un objeto.
+		if(itemSlot1):	#Si lo tiene, le decimos al slot destino que tome el objeto y lo quitamos del inventario
+			depositSlot._addItem(itemSlot1)
+			_dropItem(1)
+	else: if slot2Ocupado:	#Si no hay nada en el slot 1, probamos con el 2
+		if(itemSlot2):
+			depositSlot._addItem(itemSlot2)
+			_dropItem(2)
+	else:
+		print ("¡No hay objetos que soltar!") #Si no hay nada en ninguno de los slots, nos quejamos.
+	
+func _pickupFromDesk(item, depositSlot):	#Recibimos como argumento un objeto a depositar y un slot donde depositarlo.
+	if(!slot1Ocupado || !slot2Ocupado):	#Si hay un slot desocupado, pasamos al método para recoger objetos
+		_acquireItem(item)
+		depositSlot._emptySlot()	#Y le decimos al slot que se vacíe ya que el objeto ahora le pertenece al inventario
+	else:	#Si ambos slots están llenos, entonces printeamos una queja.
+		print("El inventario está lleno!")
+		
+func _usarCerrojo():	#Este método chequea si el inventario posee un objeto de "Cerrojo", y de ser así, lo consume para reparar la puerta. Si no lo tiene, entonces simplemente usa la reparación básica (Este método solo se llama al interactuar con la puerta, así que no pasa nada. Por ahora.)
+	if(itemSlot1 is cerrojo):
+		var valor = itemSlot1.valorReparacion
+		$"../BarraPuerta".reparacion_avanzada(valor)
+		_dropItem(1)
+	else: 
+		if(itemSlot2 is cerrojo):
+			var valor = itemSlot2.valorReparacion
+			$"../BarraPuerta".reparacion_avanzada(valor)
+			_dropItem(2)
+		else:
+			$"../BarraPuerta".reparar(15)
