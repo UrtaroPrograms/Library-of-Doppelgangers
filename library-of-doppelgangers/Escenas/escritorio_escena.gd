@@ -1,8 +1,8 @@
 extends Node2D
 
 signal Levantarse
-var escenaVictoria
-var escenaDerrota
+var escenaVictoria = preload("res://Escenas/Victoria y Derrota/escena_victoria.tscn").instantiate() #Cargamos la escena de victoria para luego poder pasar a ella.
+var escenaDerrota = preload("res://Escenas/Victoria y Derrota/escena_derrota.tscn").instantiate() #Cargamos la escena de derrota para luego poder pasar a ella.
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -24,9 +24,10 @@ func victoria():
 	arbolActual.get_root().remove_child(escenaActual)
 	arbolActual.set_current_scene(escenaVictoria)
 
-func derrota():
+func derrota(mensaje: String):
 	var arbolActual = get_tree()
 	var escenaActual = arbolActual.get_current_scene()
+	escenaDerrota.mensaje = mensaje
 	arbolActual.get_root().add_child(escenaDerrota)
 	arbolActual.get_root().remove_child(escenaActual)
 	arbolActual.set_current_scene(escenaDerrota)
