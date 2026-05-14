@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cy4g5xnwttlim"]
+
+[ext_resource type="Texture2D" uid="uid://c5omtyu12f1x8" path="res://Arte/Cuadro de Dialogo.png" id="1_ggclh"]
+
+[node name="Cuadro de dialogo" type="Control" unique_id=1465766419]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=1738023922]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -248.0
+offset_right = 450.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Imagen_dialogo" type="TextureRect" parent="BoxContainer" unique_id=1033325590]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("1_ggclh")
+
+[node name="Nombre" type="RichTextLabel" parent="BoxContainer/Imagen_dialogo" unique_id=887349520]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -178.0
+offset_top = -229.0
+offset_right = 429.0
+offset_bottom = -194.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Dialogo" type="RichTextLabel" parent="BoxContainer/Imagen_dialogo" unique_id=186623952]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -177.0
+offset_right = 425.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Imagen_Rostro" type="TextureRect" parent="BoxContainer" unique_id=2123379911]
+layout_mode = 2

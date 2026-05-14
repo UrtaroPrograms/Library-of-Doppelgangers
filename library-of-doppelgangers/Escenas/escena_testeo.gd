@@ -28,6 +28,7 @@ func _pasarAEscenaEscritorio():	#Tomamos al árbol de nodos actual, le añadimos
 	for each in interfaces:
 		self.remove_child(each)
 		arbolActual.get_root().add_child(each)
+	escenaEscritorio.chequearCliente()
 	
 func _volverAEscenaPrincipal():	#Hacemos lo mismo, excepto que ahora quitamos la escena actual y volvemos a la escena original.
 	var arbolActual = Engine.get_main_loop()
@@ -39,6 +40,12 @@ func _volverAEscenaPrincipal():	#Hacemos lo mismo, excepto que ahora quitamos la
 	arbolActual.get_root().remove_child(escenaActual)
 	arbolActual.set_current_scene(self)
 
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("npc"):
+		Global.Cliente_en_escritorio = true
+		print("true")
 
 func victoria():
 	$TemporizadorPuerta.stop()	#El temporizador de victoria sobreescribe al de la derrota, por ende lo detiene.

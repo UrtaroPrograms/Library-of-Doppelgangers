@@ -2,6 +2,8 @@ extends PanelContainer
 	
 var inventario
 var heldItem
+var libro_actual = ""
+signal entregar_libro(libro)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$MenuButton.get_popup().id_pressed.connect(_on_menu_button_pressed)	#Con esto nos conectamos al botón menú que lleva cada slot.
@@ -10,7 +12,7 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	libro_actual = heldItem
 
 func _addItem(item):	#Función para añadir un objeto al inventario. Es solo la parte visual.
 	$TextureRect.texture = item._giveAppearance()
@@ -30,8 +32,12 @@ func _on_menu_button_pressed(id : int):	#Al apretar uno de los botones del menú
 			else:
 				inventario._depositItem(self)
 				
-		1: #Entregar Libro. Todavía no hay clientes así que no se implementa.
-			print("segunda opcion") 
+		1: #Entregar Libro.
+			if(libro_actual):
+				entregar_libro.emit(libro_actual)
+				$"../..".clienteEsperando = false
+			else:
+				print("No hay un libro que entregar!")
 		2: #Recoger
 			if heldItem:
 				inventario._pickupFromDesk(heldItem,self)
