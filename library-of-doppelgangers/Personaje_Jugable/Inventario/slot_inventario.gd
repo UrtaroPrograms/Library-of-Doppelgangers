@@ -21,8 +21,9 @@ func _emptySlot():	#Borra la imagen y el texto en el slot. Es solo visual, el in
 
 
 
-func _on_button_pressed():		#Al presionar el botón, chequeamos si estamos en la escena escritorio, y de ser así, dejamos el libro en el escritorio.
-	#if get_tree().get_current_scene().get_name() == "escritorio_escena":  Actualmente no funciona el chequeo de si la escena es la del escritorio.
-		emit_signal("ObjetoSoltado", slotNumber)
+#Todo este código es vestigial, no cumple función por ahora, así que lo dejo comentado. Al mismo tiempo, dejo los botones del inventario ocultos.
+#func _on_button_pressed():		#Al presionar el botón, chequeamos si estamos en la escena escritorio, y de ser así, dejamos el libro en el escritorio.
+	##if get_tree().get_current_scene().get_name() == "escritorio_escena":  Actualmente no funciona el chequeo de si la escena es la del escritorio.
+		#emit_signal("ObjetoSoltado", slotNumber)
 
 		

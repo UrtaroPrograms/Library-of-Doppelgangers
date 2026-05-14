@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://djavrxbdwap30"]
 
-[ext_resource type="Script" uid="uid://bec508nn8pgdq" path="res://Escenas/Escritorio/escritorio_escena.gd" id="1_7whd2"]
+[ext_resource type="Script" uid="uid://bec508nn8pgdq" path="res://Escenas/Escritorio/escritorio_escena.gd" id="1_hmcps"]
 [ext_resource type="PackedScene" uid="uid://k1xrvnbrhlxy" path="res://Escenas/Escritorio/slot_escritorio.tscn" id="2_3hren"]
 
-[node name="Escritorio Escena" type="Node2D" unique_id=490961609]
-script = ExtResource("1_7whd2")
+[node name="Escritorio Escena" type="Node2D" unique_id=490961609 groups=["Escenas"]]
+script = ExtResource("1_hmcps")
 
 [node name="Button" type="Button" parent="." unique_id=1882353525]
 anchors_preset = 6
