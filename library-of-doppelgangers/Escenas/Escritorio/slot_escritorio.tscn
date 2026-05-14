@@ -34,10 +34,10 @@ grow_vertical = 2
 [node name="Slot" type="PanelContainer" parent="." unique_id=2106496043]
 layout_direction = 2
 layout_mode = 0
-offset_left = 240.0
-offset_top = 64.0
-offset_right = 316.0
-offset_bottom = 139.0
+offset_left = 14.0
+offset_top = -11.0
+offset_right = 90.0
+offset_bottom = 64.0
 size_flags_horizontal = 4
 script = ExtResource("1_pf7xw")
 
@@ -67,10 +67,10 @@ script = SubResource("GDScript_ww7an")
 [node name="Slot2" type="PanelContainer" parent="." unique_id=1827626129]
 layout_direction = 2
 layout_mode = 0
-offset_left = 396.0
-offset_top = 16.0
-offset_right = 472.0
-offset_bottom = 91.0
+offset_left = 170.0
+offset_top = -59.0
+offset_right = 246.0
+offset_bottom = 16.0
 size_flags_horizontal = 4
 script = ExtResource("1_pf7xw")
 
@@ -100,10 +100,10 @@ script = SubResource("GDScript_ww7an")
 [node name="Slot3" type="PanelContainer" parent="." unique_id=1718583876]
 layout_direction = 2
 layout_mode = 0
-offset_left = 772.0
-offset_top = 64.0
-offset_right = 848.0
-offset_bottom = 139.0
+offset_left = 981.0
+offset_top = -11.0
+offset_right = 1057.0
+offset_bottom = 64.0
 size_flags_horizontal = 4
 script = ExtResource("1_pf7xw")
 
@@ -133,10 +133,10 @@ script = SubResource("GDScript_ww7an")
 [node name="Slot4" type="PanelContainer" parent="." unique_id=864963978]
 layout_direction = 2
 layout_mode = 0
-offset_left = 616.0
-offset_top = 16.0
-offset_right = 692.0
-offset_bottom = 91.0
+offset_left = 825.0
+offset_top = -59.0
+offset_right = 901.0
+offset_bottom = 16.0
 size_flags_horizontal = 4
 script = ExtResource("1_pf7xw")
 
