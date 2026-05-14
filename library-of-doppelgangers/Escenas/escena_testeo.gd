@@ -39,6 +39,7 @@ func _volverAEscenaPrincipal():	#Hacemos lo mismo, excepto que ahora quitamos la
 		self.add_child(each)	
 	arbolActual.get_root().remove_child(escenaActual)
 	arbolActual.set_current_scene(self)
+	self.add_child(inventario)
 
 
 
@@ -62,3 +63,4 @@ func derrota(mensaje: String):
 	arbolActual.get_root().add_child(escenaDerrota)
 	arbolActual.get_root().remove_child(escenaActual)
 	arbolActual.set_current_scene(escenaDerrota)
+

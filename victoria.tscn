@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dikieifhlriwu"]
+
+[ext_resource type="Script" uid="uid://dgofjlqpiuiho" path="res://victoria.gd" id="1_58qoj"]
+[ext_resource type="Script" uid="uid://b2w4xypv27qeq" path="res://richtextlabel.gd" id="1_okh8r"]
+
+[sub_resource type="Gradient" id="Gradient_xd3q5"]
+offsets = PackedFloat32Array(0, 0.3313253, 0.8012048)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 0.13725491, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_58qoj"]
+gradient = SubResource("Gradient_xd3q5")
+fill_from = Vector2(0.33043477, 0.3043478)
+fill_to = Vector2(1, 1)
+
+[node name="Victoria" type="Control" unique_id=22332234]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_58qoj")
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=1719875311]
+position = Vector2(574, 319)
+scale = Vector2(17.96875, 10.09375)
+texture = SubResource("GradientTexture2D_58qoj")
+
+[node name="Texto victoria" type="RichTextLabel" parent="." unique_id=1850519350]
+layout_mode = 0
+offset_top = 99.0
+offset_right = 1149.0
+offset_bottom = 140.0
+theme_override_colors/default_color = Color(0.5689727, 0.56897277, 0.5689727, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 29
+bbcode_enabled = true
+text = "[shake rate=10.0 level=3 connected=1]¡Sobreviviste..![/shake]"
+horizontal_alignment = 1
+
+[node name="Flavor text" type="RichTextLabel" parent="." unique_id=919359511]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 201.0
+offset_right = 1149.0
+offset_bottom = 241.0
+bbcode_enabled = true
+horizontal_alignment = 1
+script = ExtResource("1_okh8r")
+
+[node name="Salir" type="Button" parent="." unique_id=911895856]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 413.0
+offset_right = 700.0
+offset_bottom = 483.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/icon_normal_color = Color(0.8089983, 0.8089983, 0.8089982, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+text = "Salir del Juego"
+
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]

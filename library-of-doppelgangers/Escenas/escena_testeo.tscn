@@ -5,6 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://hh4n153k3tte" path="res://Objetos Interactuables/Libro/Libro.tscn" id="2_5n0i8"]
 [ext_resource type="PackedScene" uid="uid://c3rpxlgf30ooo" path="res://Personaje_Jugable/Inventario/inventario.tscn" id="3_im4fa"]
 [ext_resource type="PackedScene" uid="uid://cnf61quystbo2" path="res://Objetos Interactuables/Escritorio/escritorio.tscn" id="4_5n0i8"]
+[ext_resource type="Script" uid="uid://cep44n3gwp1dp" path="res://Escenas/generador_npc.gd" id="6_nuepx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nuepx"]
+radius = 46.52956
+
+
 [ext_resource type="PackedScene" uid="uid://ctgh2uby6krd3" path="res://barra_puerta.tscn" id="6_nuepx"]
 [ext_resource type="Script" uid="uid://cep44n3gwp1dp" path="res://Escenas/generador_npc.gd" id="6_tdbtd"]
 [ext_resource type="PackedScene" uid="uid://grn7gbjwfa" path="res://Objetos Interactuables/Cerrojo/cerrojo.tscn" id="7_67la5"]

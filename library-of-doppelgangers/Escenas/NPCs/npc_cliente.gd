@@ -24,7 +24,6 @@ func Pedir_Libro():
 		Dialogo.text = "Hola, quisiera " + Libro_Pedido
 	
 func recibir_libro(libro):
-	print("Libro entregado")
 	if libro.nombreDelLibro == Libro_Pedido:
 		Global.Cliente_Atendido = true
 		Global.Cliente_en_escritorio = false
