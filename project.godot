@@ -15,10 +15,6 @@ run/main_scene="uid://mvd8byib56uy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-DialogManager="*uid://0ghjss1np7sl"
-
 [global_group]
 
 Escenas=""
