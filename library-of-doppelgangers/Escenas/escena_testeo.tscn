@@ -5,9 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://hh4n153k3tte" path="res://Objetos Interactuables/Libro/Libro.tscn" id="2_5n0i8"]
 [ext_resource type="PackedScene" uid="uid://c3rpxlgf30ooo" path="res://Personaje_Jugable/Inventario/inventario.tscn" id="3_im4fa"]
 [ext_resource type="PackedScene" uid="uid://cnf61quystbo2" path="res://Objetos Interactuables/Escritorio/escritorio.tscn" id="4_5n0i8"]
+[ext_resource type="Script" uid="uid://cep44n3gwp1dp" path="res://Escenas/generador_npc.gd" id="6_nuepx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nuepx"]
+radius = 46.52956
+
+
 [ext_resource type="PackedScene" uid="uid://ctgh2uby6krd3" path="res://barra_puerta.tscn" id="6_nuepx"]
 [ext_resource type="PackedScene" uid="uid://grn7gbjwfa" path="res://Objetos Interactuables/Cerrojo/cerrojo.tscn" id="7_67la5"]
 [ext_resource type="PackedScene" uid="uid://wbbavuv5lga3" path="res://Objetos Interactuables/Puerta/puerta.tscn" id="8_2b66a"]
+
 
 [node name="Escena_testeo" type="Node2D" unique_id=83255710 groups=["Escenas"]]
 script = ExtResource("1_im4fa")
@@ -43,6 +50,34 @@ tematica = "Tragedia"
 
 [node name="Escritorio" parent="." unique_id=1145544049 instance=ExtResource("4_5n0i8")]
 position = Vector2(926, 288)
+
+[node name="GeneradorNpc" type="Node2D" parent="." unique_id=332389218]
+position = Vector2(3, 363)
+script = ExtResource("6_nuepx")
+
+[node name="Timer" type="Timer" parent="GeneradorNpc" unique_id=423843825]
+wait_time = 15.0
+autostart = true
+
+[node name="PuntoA" type="Marker2D" parent="." unique_id=421835181]
+position = Vector2(5, 361)
+
+[node name="PuntoB" type="Marker2D" parent="." unique_id=366449178]
+position = Vector2(830, 383)
+
+[node name="Area2D" type="Area2D" parent="PuntoB" unique_id=116631181]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuntoB/Area2D" unique_id=651135653]
+shape = SubResource("CircleShape2D_nuepx")
+
+[node name="PuntoC" type="Marker2D" parent="." unique_id=207739696]
+position = Vector2(827, 221)
+
+[node name="PuntoD" type="Marker2D" parent="." unique_id=1997618118]
+position = Vector2(6, 224)
+
+[connection signal="timeout" from="GeneradorNpc/Timer" to="GeneradorNpc" method="_on_timer_timeout"]
+[connection signal="body_entered" from="PuntoB/Area2D" to="." method="_on_area_2d_body_entered"]
 
 [node name="TemporizadorVictoria" type="Timer" parent="." unique_id=2002237352 groups=["Interfaz"]]
 wait_time = 30.0

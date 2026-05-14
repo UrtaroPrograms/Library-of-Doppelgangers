@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://73s6v7oa40a5"]
+
+[ext_resource type="TileSet" uid="uid://dhg710khxcmwg" path="res://Arte/TileSet_Biblioteca.tres" id="1_k2ukr"]
+
+[node name="TileMapLayer" type="TileMapLayer" unique_id=212669544]
+tile_set = ExtResource("1_k2ukr")

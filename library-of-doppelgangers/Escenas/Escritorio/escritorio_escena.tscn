@@ -29,3 +29,5 @@ offset_right = 32.0
 offset_bottom = 328.0
 
 [connection signal="pressed" from="Button" to="." method="_on_levantarse_pressed"]
+
+[editable path="Slot Escritorio"]

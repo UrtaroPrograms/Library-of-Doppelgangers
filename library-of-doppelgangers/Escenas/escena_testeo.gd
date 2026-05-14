@@ -38,7 +38,14 @@ func _volverAEscenaPrincipal():	#Hacemos lo mismo, excepto que ahora quitamos la
 		self.add_child(each)	
 	arbolActual.get_root().remove_child(escenaActual)
 	arbolActual.set_current_scene(self)
+	self.add_child(inventario)
 
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("npc"):
+		Global.Cliente_en_escritorio = true
+		print("true")
 
 func victoria():
 	$TemporizadorPuerta.stop()	#El temporizador de victoria sobreescribe al de la derrota, por ende lo detiene.
@@ -55,3 +62,4 @@ func derrota(mensaje: String):
 	arbolActual.get_root().add_child(escenaDerrota)
 	arbolActual.get_root().remove_child(escenaActual)
 	arbolActual.set_current_scene(escenaDerrota)
+

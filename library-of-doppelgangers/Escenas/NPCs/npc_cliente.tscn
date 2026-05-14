@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dq71dsx6r3rxw"]
+
+[ext_resource type="Script" uid="uid://bpsdwi0ditgcb" path="res://Escenas/NPCs/npc_cliente.gd" id="1_5oh06"]
+[ext_resource type="Texture2D" uid="uid://yoe6dvjh1j1y" path="res://icon.svg" id="1_jwmx3"]
+[ext_resource type="PackedScene" uid="uid://cy4g5xnwttlim" path="res://Escenas/NPCs/cuadro_de_dialogo.tscn" id="3_ii3nr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jwmx3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jwmx3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii3nr"]
+size = Vector2(126, 124)
+
+[node name="NPC_Cliente" type="CharacterBody2D" unique_id=950580755 groups=["npc"]]
+script = ExtResource("1_5oh06")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=383111031]
+sprite_frames = SubResource("SpriteFrames_jwmx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=230869091]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ii3nr")
+
+[node name="Cuadro de dialogo" parent="." unique_id=1465766419 instance=ExtResource("3_ii3nr")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -6.0
+offset_top = 385.0
+offset_right = -6.0
+offset_bottom = 385.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[editable path="Cuadro de dialogo"]
