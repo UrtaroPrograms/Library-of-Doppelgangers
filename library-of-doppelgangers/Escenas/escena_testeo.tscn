@@ -5,15 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://hh4n153k3tte" path="res://Objetos Interactuables/Libro/Libro.tscn" id="2_5n0i8"]
 [ext_resource type="PackedScene" uid="uid://c3rpxlgf30ooo" path="res://Personaje_Jugable/Inventario/inventario.tscn" id="3_im4fa"]
 [ext_resource type="PackedScene" uid="uid://cnf61quystbo2" path="res://Objetos Interactuables/Escritorio/escritorio.tscn" id="4_5n0i8"]
-[ext_resource type="Script" uid="uid://cep44n3gwp1dp" path="res://Escenas/generador_npc.gd" id="6_nuepx"]
 [ext_resource type="PackedScene" uid="uid://ctgh2uby6krd3" path="res://barra_puerta.tscn" id="6_nuepx"]
 [ext_resource type="Script" uid="uid://cep44n3gwp1dp" path="res://Escenas/generador_npc.gd" id="6_tdbtd"]
 [ext_resource type="PackedScene" uid="uid://grn7gbjwfa" path="res://Objetos Interactuables/Cerrojo/cerrojo.tscn" id="7_67la5"]
+[ext_resource type="Script" uid="uid://cxu4uxeakhr8r" path="res://Escenas/temporizador_victoria.gd" id="7_bpykl"]
 [ext_resource type="PackedScene" uid="uid://wbbavuv5lga3" path="res://Objetos Interactuables/Puerta/puerta.tscn" id="8_2b66a"]
-
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nuepx"]
-radius = 46.52956
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nuepx"]
 radius = 46.52956
@@ -79,9 +75,10 @@ position = Vector2(827, 221)
 position = Vector2(6, 224)
 
 [node name="TemporizadorVictoria" type="Timer" parent="." unique_id=2002237352 groups=["Interfaz"]]
-wait_time = 30.0
+wait_time = 60.0
 one_shot = true
 autostart = true
+script = ExtResource("7_bpykl")
 
 [node name="BarraPuerta" parent="." unique_id=254003400 groups=["Interfaz"] instance=ExtResource("6_nuepx")]
 offset_left = 734.0
@@ -97,3 +94,4 @@ position = Vector2(812, 22)
 
 [connection signal="timeout" from="GeneradorNpc/Timer" to="GeneradorNpc" method="_on_timer_timeout"]
 [connection signal="body_entered" from="PuntoB/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="TemporizadorVictoria" to="TemporizadorVictoria" method="_on_timeout"]

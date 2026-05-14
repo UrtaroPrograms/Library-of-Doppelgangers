@@ -39,6 +39,7 @@ Being a HUD
 element!"
 
 [node name="Button" type="Button" parent="Slot1" unique_id=1430687029]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
@@ -69,6 +70,7 @@ Being a HUD
 element!"
 
 [node name="Button" type="Button" parent="Slot2" unique_id=1182704875]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 

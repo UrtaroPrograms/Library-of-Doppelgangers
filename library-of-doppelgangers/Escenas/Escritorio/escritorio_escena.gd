@@ -2,6 +2,7 @@ extends Node2D
 var Cliente
 var Nombres = ["Jhonn", "Jhonny", "Jhonna", "Julia"]
 var Libros = ["La Historia del Universo enterita", "El Percebe Feo", "La Librería de los Doppelgangers","Las Aventuras de Pepe"]
+var escenaVictoria = preload("res://Escenas/Victoria y Derrota/escena_victoria.tscn").instantiate() #Cargamos la escena de victoria para luego poder pasar a ella.
 var escenaDerrota = preload("res://Escenas/Victoria y Derrota/escena_derrota.tscn").instantiate() #Cargamos la escena de derrota para luego poder pasar a ella.
 var slots
 var clienteEsperando = false
@@ -45,6 +46,13 @@ func chequearCliente():
 			each.entregar_libro.connect(Cliente.recibir_libro)
 		clienteEsperando = true
 
+func victoria():
+	#$TemporizadorPuerta.stop()	#El temporizador de victoria sobreescribe al de la derrota, por ende lo detiene.
+	var arbolActual = get_tree()
+	var escenaActual = arbolActual.get_current_scene()
+	arbolActual.get_root().add_child(escenaVictoria)
+	arbolActual.get_root().remove_child(escenaActual)
+	arbolActual.set_current_scene(escenaVictoria)
 
 func derrota(mensaje: String):
 	var arbolActual = get_tree()

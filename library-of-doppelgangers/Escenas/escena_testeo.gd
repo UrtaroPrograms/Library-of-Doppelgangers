@@ -47,7 +47,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		print("true")
 
 func victoria():
-	$TemporizadorPuerta.stop()	#El temporizador de victoria sobreescribe al de la derrota, por ende lo detiene.
+	#$TemporizadorPuerta.stop()	#El temporizador de victoria sobreescribe al de la derrota, por ende lo detiene.
 	var arbolActual = get_tree()
 	var escenaActual = arbolActual.get_current_scene()
 	arbolActual.get_root().add_child(escenaVictoria)
@@ -61,3 +61,5 @@ func derrota(mensaje: String):
 	arbolActual.get_root().add_child(escenaDerrota)
 	arbolActual.get_root().remove_child(escenaActual)
 	arbolActual.set_current_scene(escenaDerrota)
+	
+	
