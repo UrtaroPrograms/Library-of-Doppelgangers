@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bt6cxrsl04jlw"]
+
+[ext_resource type="Script" uid="uid://bhigk8pjrrk6f" path="res://Escenas/npc_test.gd" id="1_omft8"]
+[ext_resource type="Texture2D" uid="uid://yoe6dvjh1j1y" path="res://icon.svg" id="2_pll2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omft8"]
+size = Vector2(71, 72)
+
+[node name="npc_test" type="Node2D" unique_id=1587420055]
+
+[node name="npc_test" type="StaticBody2D" parent="." unique_id=1092254103]
+script = ExtResource("1_omft8")
+
+[node name="Sprite2D" type="Sprite2D" parent="npc_test" unique_id=1253903573]
+modulate = Color(1, 0.21176471, 0.14509805, 1)
+position = Vector2(842, 364)
+scale = Vector2(0.5390625, 0.5390625)
+texture = ExtResource("2_pll2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc_test" unique_id=365931467]
+position = Vector2(842.5, 364)
+shape = SubResource("RectangleShape2D_omft8")
+
+[node name="Labelnteract" type="Label" parent="npc_test" unique_id=1153107843]
+offset_right = 40.0
+offset_bottom = 23.0
