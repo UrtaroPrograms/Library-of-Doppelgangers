@@ -16,9 +16,9 @@ script = ExtResource("1_bnejn")
 layout_direction = 2
 layout_mode = 0
 offset_left = -11.0
-offset_top = 7.0
+offset_top = 566.0
 offset_right = 65.0
-offset_bottom = 82.0
+offset_bottom = 641.0
 script = ExtResource("2_r7ghh")
 
 [node name="TextureRect" type="TextureRect" parent="Slot1" unique_id=1406306829]
@@ -46,9 +46,9 @@ layout_mode = 2
 layout_direction = 2
 layout_mode = 0
 offset_left = 114.0
-offset_top = 7.0
+offset_top = 566.0
 offset_right = 189.0
-offset_bottom = 82.0
+offset_bottom = 641.0
 script = ExtResource("2_r7ghh")
 
 [node name="TextureRect" type="TextureRect" parent="Slot2" unique_id=1087307077]

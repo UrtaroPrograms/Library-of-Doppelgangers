@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://grn7gbjwfa"]
+
+[ext_resource type="Script" uid="uid://dgecs25vsa7s5" path="res://Objetos Interactuables/Cerrojo/cerrojo.gd" id="1_wgm7i"]
+[ext_resource type="Texture2D" uid="uid://bloswyl8pt76e" path="res://Objetos Interactuables/Cerrojo/Cerrojo Placeholder.png" id="2_6ijl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ut17f"]
+size = Vector2(24, 40)
+
+[node name="Cerrojo" type="StaticBody2D" unique_id=1481363805]
+script = ExtResource("1_wgm7i")
+valorReparacion = 30
+nombre = "Cerrojo"
+descripcion = "Un cerrojo que aumenta la durabilidad de la puerta"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2009971506]
+position = Vector2(-1.1920929e-07, 0)
+scale = Vector2(0.8125, 0.8046875)
+texture = ExtResource("2_6ijl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=470400177]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ut17f")
