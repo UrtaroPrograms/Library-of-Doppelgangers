@@ -26,6 +26,9 @@ func Pedir_Libro():
 func recibir_libro(libro):
 	if libro.nombreDelLibro == Libro_Pedido:
 		Global.Cliente_Atendido = true
+		Global.Cliente_en_escritorio = false
 		generador.Salir_de_biblioteca()
 		queue_free()
+	else:
+		get_tree().call_group("Escenas","derrota", "Los clientes tienen poca paciencia para el mal servicio.")
 	

@@ -12,10 +12,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 528.0
-offset_top = 504.0
-offset_right = 624.0
-offset_bottom = 535.0
+offset_left = 979.0
+offset_top = 61.0
+offset_right = 1075.0
+offset_bottom = 92.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -27,6 +27,14 @@ offset_left = 32.0
 offset_top = 328.0
 offset_right = 32.0
 offset_bottom = 328.0
+
+[node name="Slot" parent="Slot Escritorio" index="0" unique_id=2106496043 groups=["Slots Escritorio"]]
+
+[node name="Slot2" parent="Slot Escritorio" index="1" unique_id=1827626129 groups=["Slots Escritorio"]]
+
+[node name="Slot3" parent="Slot Escritorio" index="2" unique_id=1718583876 groups=["Slots Escritorio"]]
+
+[node name="Slot4" parent="Slot Escritorio" index="3" unique_id=864963978 groups=["Slots Escritorio"]]
 
 [connection signal="pressed" from="Button" to="." method="_on_levantarse_pressed"]
 

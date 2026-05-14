@@ -28,6 +28,7 @@ func _pasarAEscenaEscritorio():	#Tomamos al árbol de nodos actual, le añadimos
 	for each in interfaces:
 		self.remove_child(each)
 		arbolActual.get_root().add_child(each)
+	escenaEscritorio.chequearCliente()
 	
 func _volverAEscenaPrincipal():	#Hacemos lo mismo, excepto que ahora quitamos la escena actual y volvemos a la escena original.
 	var arbolActual = Engine.get_main_loop()

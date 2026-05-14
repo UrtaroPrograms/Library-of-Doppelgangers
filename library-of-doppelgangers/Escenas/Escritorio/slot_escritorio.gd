@@ -32,8 +32,12 @@ func _on_menu_button_pressed(id : int):	#Al apretar uno de los botones del menú
 			else:
 				inventario._depositItem(self)
 				
-		1: #Entregar Libro. Todavía no hay clientes así que no se implementa.
-			entregar_libro.emit(libro_actual)
+		1: #Entregar Libro.
+			if(libro_actual):
+				entregar_libro.emit(libro_actual)
+				$"../..".clienteEsperando = false
+			else:
+				print("No hay un libro que entregar!")
 		2: #Recoger
 			if heldItem:
 				inventario._pickupFromDesk(heldItem,self)
