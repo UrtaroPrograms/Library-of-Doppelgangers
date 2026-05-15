@@ -1,17 +1,111 @@
 [gd_scene format=3 uid="uid://dq71dsx6r3rxw"]
 
 [ext_resource type="Script" uid="uid://bpsdwi0ditgcb" path="res://Escenas/NPCs/npc_cliente.gd" id="1_5oh06"]
-[ext_resource type="Texture2D" uid="uid://yoe6dvjh1j1y" path="res://icon.svg" id="1_jwmx3"]
+[ext_resource type="Texture2D" uid="uid://wctys8yscq0p" path="res://Arte/Sprite-0001-Sheet.png" id="2_ii3nr"]
 [ext_resource type="PackedScene" uid="uid://cy4g5xnwttlim" path="res://Escenas/NPCs/cuadro_de_dialogo.tscn" id="3_ii3nr"]
+[ext_resource type="Texture2D" uid="uid://xb4kpbggr1oy" path="res://Arte/Adam_Sandler-Sheet-Sheet.png" id="3_o082b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o082b"]
+atlas = ExtResource("2_ii3nr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0p8k"]
+atlas = ExtResource("2_ii3nr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojgsm"]
+atlas = ExtResource("2_ii3nr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od4nt"]
+atlas = ExtResource("2_ii3nr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iplcq"]
+atlas = ExtResource("2_ii3nr")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scs12"]
+atlas = ExtResource("2_ii3nr")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpghf"]
+atlas = ExtResource("3_o082b")
+region = Rect2(0, 0, 87, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebgxy"]
+atlas = ExtResource("3_o082b")
+region = Rect2(87, 0, 87, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xqks"]
+atlas = ExtResource("3_o082b")
+region = Rect2(174, 0, 87, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65i64"]
+atlas = ExtResource("3_o082b")
+region = Rect2(261, 0, 87, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2bqd"]
+atlas = ExtResource("3_o082b")
+region = Rect2(348, 0, 87, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daj0j"]
+atlas = ExtResource("3_o082b")
+region = Rect2(435, 0, 87, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i43cv"]
+atlas = ExtResource("3_o082b")
+region = Rect2(522, 0, 87, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jwmx3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_jwmx3")
+"texture": SubResource("AtlasTexture_o082b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0p8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojgsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od4nt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iplcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scs12")
 }],
 "loop": true,
 "name": &"default",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpghf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebgxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xqks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65i64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2bqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daj0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i43cv")
+}],
+"loop": true,
+"name": &"portrait",
 "speed": 5.0
 }]
 
@@ -22,10 +116,16 @@ size = Vector2(126, 124)
 script = ExtResource("1_5oh06")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=383111031]
+modulate = Color(6.1466823, 0.6832543, 0.39270103, 1)
+position = Vector2(-2.9802322e-06, 1.5)
+scale = Vector2(3.8749995, 1.5937501)
 sprite_frames = SubResource("SpriteFrames_jwmx3")
+animation = &"portrait"
+frame_progress = 0.003866642
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=230869091]
 position = Vector2(0, 1)
+scale = Vector2(0.43, 0.43)
 shape = SubResource("RectangleShape2D_ii3nr")
 
 [node name="Cuadro de dialogo" parent="." unique_id=1465766419 instance=ExtResource("3_ii3nr")]

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://d13gg2tva5fbr"]
+
+[ext_resource type="Script" uid="uid://btkgghlwb0kpb" path="res://escena_tutorial.gd" id="1_g3mky"]
+[ext_resource type="FontFile" uid="uid://d23mwswire3x5" path="res://Arte/KimsBitHand.ttf" id="2_de6tb"]
+[ext_resource type="Texture2D" uid="uid://dso7aeqj6v7w4" path="res://Objetos Interactuables/Libro/Libro Placeholder.png" id="3_26me6"]
+[ext_resource type="Texture2D" uid="uid://ewq3vkaydx6g" path="res://Objetos Interactuables/Puerta/Puerta Placeholder.png" id="4_0nj0x"]
+[ext_resource type="Texture2D" uid="uid://b7renlkqa5apf" path="res://Objetos Interactuables/Escritorio/Placeholder Escritorio.png" id="5_26me6"]
+
+[node name="Escena_tutorial" type="Node2D" unique_id=210437377]
+script = ExtResource("1_g3mky")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1831914632]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1693817183]
+anchors_preset = -1
+anchor_top = -0.79320985
+anchor_bottom = -0.044753086
+offset_left = 343.0
+offset_top = 519.0
+offset_right = 821.0
+offset_bottom = 678.0
+theme_override_fonts/font = ExtResource("2_de6tb")
+theme_override_font_sizes/font_size = 34
+text = "
+movimiento: flechas
+
+Interractuar: Z
+repara la puerta interactuando
+atiende clientes en el escritorio
+
+Haz clic en los cuadros 
+del Escritorio para depositar y 
+entregar libros
+
+¡No dejes que la puerta se
+rompa!
+
+Presiona la Z para
+ comenzar la partida"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot1" type="PanelContainer" parent="." unique_id=133244652]
+use_parent_material = true
+layout_direction = 2
+offset_left = 853.0
+offset_top = 290.0
+offset_right = 929.0
+offset_bottom = 365.0
+
+[node name="TextureRect" type="TextureRect" parent="Slot1" unique_id=478517812]
+visible = false
+use_parent_material = true
+layout_mode = 2
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Slot1/TextureRect" unique_id=1234271909]
+use_parent_material = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = -132.0
+offset_right = 156.0
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 8
+text = "Hooo boy
+I really love 
+Being a HUD
+element!"
+
+[node name="LibroPlaceholder" type="Sprite2D" parent="Slot1" unique_id=889193511]
+position = Vector2(-556.99994, 38.99997)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("3_26me6")
+
+[node name="PuertaPlaceholder" type="Sprite2D" parent="." unique_id=349911746]
+position = Vector2(816.00006, 440.99997)
+scale = Vector2(1.640625, 2.09375)
+texture = ExtResource("4_0nj0x")
+
+[node name="PlaceholderEscritorio" type="Sprite2D" parent="." unique_id=485295151]
+position = Vector2(884, 149)
+scale = Vector2(2.34375, 2.34375)
+texture = ExtResource("5_26me6")

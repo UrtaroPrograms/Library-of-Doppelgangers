@@ -17,6 +17,7 @@ func _ready() -> void:
 		Cliente.generador = Global.Generador
 		Cliente.Nombre_Cliente = Nombres.pick_random()
 		Cliente.Libro_Pedido = Libros.pick_random()
+		Cliente.esperar()
 		for each in slots:
 			each.entregar_libro.connect(Cliente.recibir_libro)
 		clienteEsperando = true
@@ -42,6 +43,7 @@ func chequearCliente():
 		Cliente.generador = Global.Generador
 		Cliente.Nombre_Cliente = Nombres.pick_random()
 		Cliente.Libro_Pedido = Libros.pick_random()
+		Cliente.esperar()
 		for each in slots:
 			each.entregar_libro.connect(Cliente.recibir_libro)
 		clienteEsperando = true

@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://15oipy1vp1bc" path="res://barra_de_tiempo_entidad_puerta.gd" id="1_7l8bb"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7l8bb"]
+light_mode = 1
+
 [node name="BarraPuerta" type="Control" unique_id=254003400]
 layout_mode = 3
 anchors_preset = 15
@@ -18,6 +21,7 @@ offset_bottom = 166.0
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1453044792]
+material = SubResource("CanvasItemMaterial_7l8bb")
 layout_mode = 2
 text = "Integridad de la puerta
 "
@@ -25,6 +29,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=551987790]
+material = SubResource("CanvasItemMaterial_7l8bb")
 layout_mode = 2
 value = 100.0
 allow_greater = true
