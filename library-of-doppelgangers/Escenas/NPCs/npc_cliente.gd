@@ -10,13 +10,20 @@ var generador
 
 func _ready():
 	UI.visible = false
+	$AnimatedSprite2D.play("default")
 	
 func _physics_process(delta: float) -> void:
 	var direccion = (Objetivo - global_position).normalized()
 	velocity = direccion * Velocidad_Movimiento
 	move_and_slide()
 
+func caminar():
+	$AnimatedSprite2D.play("default")
 
+func esperar():
+	print("deberia cambiar de animacion")
+	$AnimatedSprite2D.play("portrait")
+	
 func Pedir_Libro():
 	if UI != null:
 		UI.visible = true

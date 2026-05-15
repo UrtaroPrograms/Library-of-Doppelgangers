@@ -4,7 +4,11 @@
 [ext_resource type="Script" uid="uid://bwlsotjuf2885" path="res://Personaje_Jugable/Inventario/slot_inventario.gd" id="2_r7ghh"]
 [ext_resource type="Texture2D" uid="uid://dso7aeqj6v7w4" path="res://Objetos Interactuables/Libro/Libro Placeholder.png" id="3_bmj48"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d762e"]
+light_mode = 1
+
 [node name="Inventario" type="Control" unique_id=52916187]
+material = SubResource("CanvasItemMaterial_d762e")
 layout_mode = 3
 anchors_preset = 0
 offset_left = 12.0
@@ -13,6 +17,7 @@ offset_bottom = 40.0
 script = ExtResource("1_bnejn")
 
 [node name="Slot1" type="PanelContainer" parent="." unique_id=1783860121]
+use_parent_material = true
 layout_direction = 2
 layout_mode = 0
 offset_left = -11.0
@@ -22,11 +27,13 @@ offset_bottom = 641.0
 script = ExtResource("2_r7ghh")
 
 [node name="TextureRect" type="TextureRect" parent="Slot1" unique_id=1406306829]
+use_parent_material = true
 layout_mode = 2
 texture = ExtResource("3_bmj48")
 expand_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Slot1/TextureRect" unique_id=1821721244]
+use_parent_material = true
 layout_mode = 0
 offset_left = 2.0
 offset_top = -132.0
@@ -44,6 +51,7 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="Slot2" type="PanelContainer" parent="." unique_id=783628041]
+use_parent_material = true
 layout_direction = 2
 layout_mode = 0
 offset_left = 114.0
@@ -53,11 +61,13 @@ offset_bottom = 641.0
 script = ExtResource("2_r7ghh")
 
 [node name="TextureRect" type="TextureRect" parent="Slot2" unique_id=1087307077]
+use_parent_material = true
 layout_mode = 2
 texture = ExtResource("3_bmj48")
 expand_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Slot2/TextureRect" unique_id=1243733380]
+use_parent_material = true
 layout_mode = 0
 offset_left = 2.0
 offset_top = -132.0

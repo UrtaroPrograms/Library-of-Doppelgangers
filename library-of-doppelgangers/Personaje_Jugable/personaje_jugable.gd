@@ -5,6 +5,7 @@ const SPEED = 200.0
 
 
 func _ready():
+	$AnimatedSprite2D/LinternaSprite.play("default")
 	pass
 	
 func _physics_process(delta: float) -> void:
@@ -43,6 +44,15 @@ func _flip_vertical_appearance(flip: bool):
 	
 func _turnRaycast(angle: int):
 	$RayCast2D.rotation_degrees = angle
+
+func moveLantern(orientation: int):
+	match orientation:
+		0:
+			$AnimatedSprite2D/LinternaSprite.position = Vector2(7.351,3.027)
+		1:
+			$AnimatedSprite2D/LinternaSprite.position= Vector2(-7.351,3.027)
+		2:
+			$AnimatedSprite2D/LinternaSprite.position= Vector2(7.351,-12.027)
 
 
 	#var horizontalDirection := Input.get_axis("move_left", "move_right")

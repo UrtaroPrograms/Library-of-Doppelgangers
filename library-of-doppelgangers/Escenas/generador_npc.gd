@@ -17,4 +17,5 @@ func Salir_de_biblioteca():
 	if Global.Cliente_Atendido:
 		Cliente.global_position = PuntoC.global_position
 		Cliente.Objetivo = PuntoD.global_position
+		Cliente.caminar()
 	Global.Cliente_Atendido = false
